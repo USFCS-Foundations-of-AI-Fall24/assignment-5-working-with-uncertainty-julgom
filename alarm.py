@@ -59,16 +59,19 @@ def main():
 
     # the probability of Mary Calling given that John called
     query1 = alarm_infer.query(variables=["MaryCalls"],evidence={"JohnCalls":"yes"})
+    print("\nQuery 1")
     print("\nP(MaryCalls | JohnCalls):")
     print(query1)
 
     # the probability of both John and Mary calling given Alarm
     query2 = alarm_infer.query(variables=["JohnCalls", "MaryCalls"],evidence={"Alarm":"yes"})
+    print("\nQuery 2")
     print("\nP(JohnCalls and MaryCalls | Alarm):")
     print(query2)
 
     # the probability of Alarm, given that Mary called.
     query3 = alarm_infer.query(variables=["Alarm"],evidence={"MaryCalls":"yes"})
+    print("\nQuery 3")
     print("\nP(Alarm | MaryCalls):")
     print(query3)
 
